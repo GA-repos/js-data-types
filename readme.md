@@ -4,7 +4,7 @@
 
 ## Learning Objectives
 
-- Start using JavaScript and use developer tools.
+- Start using JavaScript and use developer tools + nodejs.
 - Introduce the syntax of the JavaScript language.
 - Work with the primitive data types in JavaScript.
 - Start working with arrays in JavaScript.
@@ -172,6 +172,35 @@ Another example of a REPL is: [https://repl.it/](https://repl.it/). This may be
 a helpful tool to use throughout class to test code.
 
 Keyboard shortcut: Highlight code and press **Command + /** (`⌘ + /`)
+
+## NodeJS in the Terminal
+
+
+We're going to use another method to run javascript that integrates more tightly with VSCode, and let's us focus on programming fundamentals - NodeJS!
+
+Instead of using the DevTools in the browser, we'll instead run javascript lines, and javascript files using nodejs (aka "node") in the terminal. There are two ways to do this:
+ - using the node repl
+ - using node with a script file
+
+### Running Node REPL
+
+Similiar to the REPL in devtools, this allows an interactive session where we run one line at a time.
+
+<img src="images/node-terminal-1.JPG">
+
+Type `.exit` to exit the NodeJS REPL, and return to the command prompt.
+
+### Running a Node Script
+
+In this style we write multiple
+
+<img src="images/node-script-1.JPG">
+
+> Question: what are the differences in what variables get "remembered" between user interactions?
+
+There are many subtle differences* between NodeJS and in-browser javascript running ECMAScript. For now since we're covering the very basics, let's ignore that and get down to learning our first true programming language.
+
+*: You can read more about these differences at [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview) and [W3 School](https://www.w3schools.com/js/js_versions.asp).
 
 ## Primitive Data Types in JavaScript
 
@@ -501,46 +530,6 @@ console.log(myFavoriteNumber)
 // => "five"
 ```
 
-## Null + Undefined + NaN (5 minutes / 1:20)
-
-- If we declare a variable without assigning a value to it, it will, by default,
-  have a value of `undefined`.
-
-- Null is very similar to `undefined` but we have to explicitly assign it to a
-  variable.
-
-In summary, the difference is that `undefined` implies nothing because it never
-was anything while `null` implies explicitly set to nothing.
-
-### NaN ("Not a number")
-
-A special number...that's not a number?
-
-```js
-typeof NaN
-// => Number
-```
-
-`NaN` is the return value from operations which have an undefined numerical
-result (e.g. dividing 0 by 0, multiplying strings together).
-
-```js
-0 / 0
-// => NaN
-```
-
-You can test whether a value is a valid number using the `isNaN()` function. The
-method will return false if the argument passed into it is a valid number.
-
-```js
-const myFavoriteNumber = 5
-isNaN(myFavoriteNumber)
-// => false, because 5 is valid
-
-const myUnrealNumber = 0 / 0
-isNaN(myUnrealNumber)
-// => true, because 0 divided by 0 is NaN
-```
 
 ## Variable Syntax (5 minutes / 1:25)
 
@@ -1004,3 +993,44 @@ var arr2 = arr.slice();
   [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
 - Install
   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+## Null + Undefined + NaN (5 minutes / 1:20)
+
+- If we declare a variable without assigning a value to it, it will, by default,
+  have a value of `undefined`.
+
+- Null is very similar to `undefined` but we have to explicitly assign it to a
+  variable.
+
+In summary, the difference is that `undefined` implies nothing because it never
+was anything while `null` implies explicitly set to nothing.
+
+### NaN ("Not a number")
+
+A special number...that's not a number?
+
+```js
+typeof NaN
+// => Number
+```
+
+`NaN` is the return value from operations which have an undefined numerical
+result (e.g. dividing 0 by 0, multiplying strings together).
+
+```js
+0 / 0
+// => NaN
+```
+
+You can test whether a value is a valid number using the `isNaN()` function. The
+method will return false if the argument passed into it is a valid number.
+
+```js
+const myFavoriteNumber = 5
+isNaN(myFavoriteNumber)
+// => false, because 5 is valid
+
+const myUnrealNumber = 0 / 0
+isNaN(myUnrealNumber)
+// => true, because 0 divided by 0 is NaN
+```
