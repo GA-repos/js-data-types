@@ -433,7 +433,48 @@ There are three main logical operators:
 
 ## Break (10 min / 1:05)
 
-## Variables (10 min / 1:15)
+## Null + Undefined + NaN (5 minutes / 1:15)
+
+- If we declare a variable without assigning a value to it, it will, by default,
+  have a value of `undefined`.
+
+- Null is very similar to `undefined` but we have to explicitly assign it to a
+  variable.
+
+In summary, the difference is that `undefined` implies nothing because it never
+was anything while `null` implies explicitly set to nothing.
+
+### NaN ("Not a number")
+
+A special number...that's not a number?
+
+```js
+typeof NaN
+// => Number
+```
+
+`NaN` is the return value from operations which have an undefined numerical
+result (e.g. dividing 0 by 0, multiplying strings together).
+
+```js
+0 / 0
+// => NaN
+```
+
+You can test whether a value is a valid number using the `isNaN()` function. The
+method will return false if the argument passed into it is a valid number.
+
+```js
+const myFavoriteNumber = 5
+isNaN(myFavoriteNumber)
+// => false, because 5 is valid
+
+const myUnrealNumber = 0 / 0
+isNaN(myUnrealNumber)
+// => true, because 0 divided by 0 is NaN
+```
+
+## Variables (10 min / 1:20)
 
 **Variables** are containers for information -- we can store any value in them.
 
@@ -531,7 +572,7 @@ console.log(myFavoriteNumber)
 ```
 
 
-## Variable Syntax (5 minutes / 1:25)
+## Variable Syntax (5 minutes / 1:30)
 
 ### Semicolons
 
@@ -600,7 +641,7 @@ translate to how easy you are to work with!
 */
 ```
 
-## You Do: Type Conversion (5 minutes / 1:30)
+## You Do: Type Conversion (5 minutes / 1:35)
 
 With the person next to you, spend five minutes on the following activity.
 First, predict what the line of code will do, next run the code in your REPL and
@@ -697,7 +738,7 @@ There are other examples of type coercion, but the point here isn't to remember
 them all. Just be aware that sometimes JavaScript will yield weird results with
 no explanation - and it may be due to type coercion.
 
-## Arrays (15 minutes / 1:45)
+## Arrays (15 minutes / 1:40)
 
 Arrays are an ordered collection of related data and are organized by index.
 
@@ -762,7 +803,7 @@ let mixed = [
 
 > The syntax can be hard to read, but how many items are in this array?
 
-## Objects (15 min / 2:00)
+## Objects (15 min / 1:55)
 
 Objects in javascript are fundamental to the language. Everything is an object.
 **Literally everything.** This will make more sense later.
@@ -813,7 +854,7 @@ We'll cover more about objects in a later lesson, but these are the basics.
 Build the biggest, baddest object that you can and console.log each of the
 properties in it.
 
-## Data Type Methods (Rest of class / 2:30)
+## Data Type Methods (Rest of class / 2:10)
 
 Each of the data types we've covered so far has their own "methods". These are
 functions that you can run to perform certain operations.
@@ -993,44 +1034,3 @@ var arr2 = arr.slice();
   [Standard-JS](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
 - Install
   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-## Null + Undefined + NaN (5 minutes / 1:20)
-
-- If we declare a variable without assigning a value to it, it will, by default,
-  have a value of `undefined`.
-
-- Null is very similar to `undefined` but we have to explicitly assign it to a
-  variable.
-
-In summary, the difference is that `undefined` implies nothing because it never
-was anything while `null` implies explicitly set to nothing.
-
-### NaN ("Not a number")
-
-A special number...that's not a number?
-
-```js
-typeof NaN
-// => Number
-```
-
-`NaN` is the return value from operations which have an undefined numerical
-result (e.g. dividing 0 by 0, multiplying strings together).
-
-```js
-0 / 0
-// => NaN
-```
-
-You can test whether a value is a valid number using the `isNaN()` function. The
-method will return false if the argument passed into it is a valid number.
-
-```js
-const myFavoriteNumber = 5
-isNaN(myFavoriteNumber)
-// => false, because 5 is valid
-
-const myUnrealNumber = 0 / 0
-isNaN(myUnrealNumber)
-// => true, because 0 divided by 0 is NaN
-```
